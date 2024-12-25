@@ -5,14 +5,13 @@ echo $script_dir
 
 sudo node ./buildAllPage.js
 
-cd $script_dir
-chmod -R 0755 ./*
-#!/bin/bash
-script_dir=$(pwd)
+npm run docs:build
 
-echo $script_dir
+rm -rf build/
 
-sudo node ./buildAllPage.js
+mkdir build
+
+mv .vitepress/dist/* build/
 
 cd $script_dir
 chmod -R 0755 ./*

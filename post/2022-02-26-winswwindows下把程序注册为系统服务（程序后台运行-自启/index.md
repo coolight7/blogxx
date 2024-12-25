@@ -76,7 +76,7 @@ tags:
     - <stopargument>一般改成程序路径，并且后面的-s stop改为对应的程序停止的命令
         - 同<startargument>的写法。
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8" ?>
 <service>
   <id>nginx</id>
