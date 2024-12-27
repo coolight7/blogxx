@@ -3,8 +3,8 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: 'zh-Hans',
-  title: "猫薄荷",
-  description: "技术博客记录 ~ coolight's blog.",
+  title: "拟声xx",
+  description: "技术记录 ~ coolight's blog.",
   appearance: "dark",
   lastUpdated: true,
   ignoreDeadLinks: true,

@@ -87,7 +87,7 @@ fs.readdir(dirPath, async (err, files) => {
 `;
     for (var i = 0; i < pagelist.length; ++i) {
         var item = pagelist[i];
-        result += `- [${item.title}](/port/${item.dirname}/)\n`;
+        result += `- [${item.title}](/post/${item.dirname}/)\n`;
     }
     // 写入
     fs.writeFile(allpageFilePath, result, (err) => {

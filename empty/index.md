@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "猫薄荷"
+  name: "拟声xx"
   text: "技术记录 ~ coolight's blog."
   tagline: c/c++ flutter audio video  web network
   actions:
