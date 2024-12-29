@@ -15,24 +15,3 @@ date: "2022-02-27"
     - bilibili： [coolight](https://space.bilibili.com/93784977?spm_id_from=333.1007.0.0)
 
 ![](images/cropped-coolight.jpg)
-
-* * *
-
-## 网站
-
-- 猫薄荷 - Coolblog
-
-- 这是一个个人博客网站。
-    - 使用了wordpress搭建。
-    
-    - 使用了Adams主题。
-
-![](images/cropped-coolblog.png)
-
-* * *
-
-## 其他
-
-- [Mimicry](https://music.mimicry.cool/)
-
-- [Vsinger](https://vsinger.com/)
