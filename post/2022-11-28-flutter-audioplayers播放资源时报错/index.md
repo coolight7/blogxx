@@ -24,7 +24,7 @@ tags:
 
 - 但仍然报错，报错代码行：audioPlayer.setSource(AssetSource("file/music.mp3"));
 
-```
+```sh
 E/flutter (32073): [ERROR:flutter/runtime/dart_vm_initializer.cc(41)] Unhandled Exception: Unable to load asset: assets/file/music.mp3
 E/flutter (32073): #0      PlatformAssetBundle.load (package:flutter/src/services/asset_bundle.dart:258:7)
 E/flutter (32073): <asynchronous suspension>
@@ -93,11 +93,11 @@ D/AudioPlayers(31616): java.io.IOException: Cleartext HTTP traffic to {xxx.域�
 
 - \-
     - 在application标签的属性中添加：**android:usesCleartextTraffic="true"**
-    - 注意是 **<application 这里></application>** ，而不是 **<application>不是这里</application>**
+    - 注意是 **`<application 这里></application>`** ，而不是 **`<application>不是这里</application>`**
 
 ![](images/image-2.png)
 
 - 方法3：同样的修改 **AndroidManifest.xml** 文件
-    - 修改/添加 <manifest> 标签的属性 **android:targetSandboxVersion="1"**
+    - 修改/添加 `<manifest>` 标签的属性 **android:targetSandboxVersion="1"**
 
 ![](images/image-4.png)

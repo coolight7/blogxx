@@ -12,9 +12,9 @@ tags:
 ---
 # [vue3]组件间v-bind，v-model传参(defineProps，defineEmits)
 
-> 1\. 自定义组件间也可以和普通标签（<div> <span>）一样指定属性传参
+> 1\. 自定义组件间也可以和普通标签（`<div> <span>`）一样指定属性传参
 > 
-> 2\. 形如（<child value="hello coolight"></child>）给组件<child>指定value属性为"hello coolight"
+> 2\. 形如（`<child value="hello coolight"></child>`）给组件`<child>`指定value属性为"hello coolight"
 > 
 > 3\. 我们也可以自己模拟v-model的效果
 > 
@@ -27,9 +27,9 @@ tags:
     
     - 不需要import导入即可使用
     
-    - 只能在<script setup>中使用
+    - 只能在`<script setup>`中使用
     - 不可以在局部变量中使用这个函数
-    - 不可以访问 <script setup> 中定义的其他变量
+    - 不可以访问 `<script setup>` 中定义的其他变量
 - 需要传入自定义参数名，\[可选\]指定参数类型，\[可选\]指定参数是否必须传入，\[可选\]指定参数的默认值。
     - 类型：
         - Number
@@ -53,7 +53,7 @@ tags:
 - 示例：
     - 组件：
 
-```
+```html
 <script setup>
 import { toRefs } from 'vue';
 const props = defineProps({
@@ -77,7 +77,7 @@ const {
 - \-
     - 使用组件
 
-```
+```html
 <script setup>
 import helloVue from '../../components/global/hello.vue';
 </script>
@@ -93,7 +93,7 @@ import helloVue from '../../components/global/hello.vue';
 
 - 解析：
     - 组件定义了一个要接收的参数text，并指定了它的类型为字符串String，默认值，并且它并不是必须传入的。
-    - 组件的<template>中，可以通过props访问参数props.text，也可以使用toRefs，解构出来。
+    - 组件的`<template>`中，可以通过props访问参数props.text，也可以使用toRefs，解构出来。
         - toRefs()需要import
         - 如果不使用toRefs()，直接解构将导致参数失去响应性
     - 在使用组件时，可以直接指定参数并传参，也可以使用v-bind，动态传参。
@@ -117,7 +117,7 @@ import helloVue from '../../components/global/hello.vue';
 - 示例：
     - 组件：
 
-```
+```html
 <script setup>
 import { reactive } from 'vue';
 import { toRefs } from 'vue';
@@ -152,7 +152,7 @@ const btn2_click = () => {
 - \-
     - 使用组件：
 
-```
+```html
 <script setup>
 import { reactive } from 'vue';
 import helloVue from '../../../components/global/hello.vue';
@@ -190,7 +190,7 @@ let obj = reactive({
 - 示例：
     - 组件：
 
-```
+```html
 <script setup>
 import { toRefs } from 'vue';
 const props = defineProps({
@@ -227,7 +227,7 @@ const btn2_click = () => {
 - \-
     - 使用组件：
 
-```
+```html
 <script setup>
 import { reactive } from 'vue';
 import helloVue from '../../../components/global/hello.vue';
@@ -261,7 +261,7 @@ let mValue = reactive({
 - 那么我们就可以自己绑定一个事件给这个信号，然后自己来更新obj
 - 示例（组件代码不变，使用组件的代码修改）：
 
-```
+```html
 <script setup>
 import { reactive } from 'vue';
 import helloVue from '../../../components/global/hello.vue';

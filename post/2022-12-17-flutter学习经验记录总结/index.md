@@ -27,7 +27,7 @@ tags:
 - \-
     - 在application标签的属性中添加：**android:usesCleartextTraffic="true"**
     
-    - 注意是 **<application 这里></application>** ，而不是 **<application>不是这里</application>**
+    - 注意是 **`<application 这里></application>`** ，而不是 **`<application>不是这里</application>`**
 
 ![](images/image-2.png)
 
@@ -82,7 +82,7 @@ tags:
     
     - Obx大多是用于要绑定一个.obx的变量给我们的组件时使用，它并不需要GetxController，当然你把GetxController里面定义的.obx变量绑定过来用也是可以的
     
-    - Getx则大多是需要一个GetxController配合使用的，但你不写init也不写Getx<T>的T类型也是可以的，只要被Getx包裹的组件有使用到.obx变量即可
+    - Getx则大多是需要一个GetxController配合使用的，但你不写init也不写`Getx<T>`的T类型也是可以的，只要被Getx包裹的组件有使用到.obx变量即可
     
     - 也就是说，Obx和Getx可以使用的前提并不是你给了他们GetxController，而是被包裹的组件有使用到.obx变量
 

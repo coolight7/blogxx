@@ -7,6 +7,7 @@ export default defineConfig({
   description: "技术博客记录 ~ coolight's blog.",
   appearance: "dark",
   lastUpdated: true,
+  ignoreDeadLinks: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [

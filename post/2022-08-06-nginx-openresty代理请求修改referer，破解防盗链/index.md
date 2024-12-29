@@ -69,7 +69,7 @@ tags:
     
     - 在这个文件夹里面新建一个文件test.js，写入：
 
-```
+```js
 const axios = require(`axios`);
 const getServer = (in_url, in_data, successFun, errFun) => {
     axios({
@@ -122,7 +122,7 @@ getServer(
 
 - 示例：
 
-```
+```conf
 server {
         listen       80;
         server_name  localhost, 127.0.0.1;
@@ -144,7 +144,7 @@ server {
     
     - 这个脚本是修改响应头的3个属性，让请求允许跨域
 
-```
+```conf
 ngx.header['Access-Control-Allow-Origin']  =  '*';
 ngx.header['Access-Control-Allow-Methods'] = 'get, post, options';
 ngx.header['Access-Control-Allow-Headers'] = 'dnt,x-mx-reqtoken,keep-alive,user-agent,x-requested-with,if-modified-since,cache-control,content-type,authorization';
@@ -188,9 +188,9 @@ ngx.header['Access-Control-Allow-Headers'] = 'dnt,x-mx-reqtoken,keep-alive,user-
     - 除了用服务器代理置空以外，我们还可以在html网页中配置meta标签，告诉浏览器在跳转页面时不要带上referer
         - 在html的head标签内增加：`<meta` `name="referrer" content="never">`
         
-        - 还有可以设置单个<a>标签跳转时不带上referer、使用window.open打开等操作。
+        - 还有可以设置单个`<a>`标签跳转时不带上referer、使用window.open打开等操作。
 
-```
+```html
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -247,7 +247,7 @@ ngx.header['Access-Control-Allow-Headers'] = 'dnt,x-mx-reqtoken,keep-alive,user-
 - 配置跨域
     - 自然而然地百度后直接修改配置文件，增加三句：
 
-```
+```conf
 add_header Access-Control-Allow-Origin '*';
 add_header Access-Control-Allow-Methods 'POST,OPTIONS,GET';
 add_header Access-Control-Allow-Headers 'DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization';

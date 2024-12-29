@@ -38,7 +38,7 @@ tags:
 - 如果不使用srand()初始化，然后直接调用rand()的话，会自动调用srand(1)进行初始化，因此你会发现，将写好的程序重复运行多次，每次生成的随机数是一样的。
 - 我们一般是使用时间戳进行初始化，如：
 
-```
+```c++
 #include <time.h>
 #include <stdlib.h>
 
@@ -59,7 +59,7 @@ int main() {
 
 ## c++11\_random
 
-- 如果你可以使用c++11标准，应该考虑使用<random>库的新方法获取随机数，功能更强更省心，他们的使用方法需要再了解：
+- 如果你可以使用c++11标准，应该考虑使用`<random>`库的新方法获取随机数，功能更强更省心，他们的使用方法需要再了解：
     - 产生均匀分布的整数：uniform\_int\_distribution
     - 产生均匀分布的实数：uniform\_real\_distribution
     - 产生正态分布的实数：normal\_distribution

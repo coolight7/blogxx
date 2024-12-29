@@ -86,7 +86,7 @@ const clickFun = () => {
 
 ![](images/image-13.png)
 
-- 注意ref()返回的是一个refImpl的对象，它的value属性才是我们要的数据，所以在js中操作时需要.value，但在<template>中会自动展开为内部值
+- 注意ref()返回的是一个refImpl的对象，它的value属性才是我们要的数据，所以在js中操作时需要.value，但在`<template>`中会自动展开为内部值
 - 可以看到，通过ref()获取的变量是响应式的，会随着变量值的改变而体现在html页面中
 
 ## reactive(对象)
@@ -134,4 +134,4 @@ const clickFun = () => {
 
 - reactive()也可以让变量得到响应性
 - 但它需要传入对象，而ref()需要传入基本数据类型
-- 而且它返回的是一个proxy对象，但我们在js操作和在<template>绑定时，都可以直接访问和操作其内部变量。
+- 而且它返回的是一个proxy对象，但我们在js操作和在`<template>`绑定时，都可以直接访问和操作其内部变量。

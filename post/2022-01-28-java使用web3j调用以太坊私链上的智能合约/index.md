@@ -54,17 +54,9 @@ tags:
 
 - - 解压刚刚下载的文件，到这个目录里。
 
-<figure>
-
 ![](images/image-5.png)
 
-<figcaption>
-
 此时的目录结构
-
-</figcaption>
-
-</figure>
 
 - - 然后进入bin目录，里面有2个文件:
         - web3j -linux下使用的命令行工具，可执行文件
@@ -188,7 +180,7 @@ contract HelloWorld {
 
 ### 使用web3j把智能合约生成java类
 
-```
+```sh
 web3j generate solidity -a hello.abi -b hello.bin -o ./web_hello -p com.coolight.hello
 ```
 
@@ -215,7 +207,7 @@ web3j generate solidity -a hello.abi -b hello.bin -o ./web_hello -p com.coolight
     - 增加这段代码后，调用智能合约中的GetCount()时改为调用这个增加的函数GetCountReturn()
     - 由于GetCount()本应返回uint，但生成的代码中是返回TransactionReceipt，如果不加这个函数，到时候运行时会有麻烦。
 
-```
+```java
     //web3j自动生成的函数
     public RemoteFunctionCall<TransactionReceipt> GetCount() {
         final Function function = new Function(
@@ -235,8 +227,8 @@ web3j generate solidity -a hello.abi -b hello.bin -o ./web_hello -p com.coolight
 ```
 
 - 分析这个要增加的函数
-    - 第一行：public RemoteFunctionCall<BigInteger> GetCountReturn()
-        - RemoteFunctionCall<BigInteger>就是这个函数的返回值类型，<>里面替换填入了合约函数的返回值类型对应java的类型。
+    - 第一行：`public RemoteFunctionCall<BigInteger> GetCountReturn()`
+        - `RemoteFunctionCall<BigInteger>`就是这个函数的返回值类型，`<>`里面替换填入了合约函数的返回值类型对应java的类型。
         - 合约类型 --> java类型
         - uint --> BigInteger
         - string --> String
@@ -249,22 +241,22 @@ web3j generate solidity -a hello.abi -b hello.bin -o ./web_hello -p com.coolight
             - 这个是一个String ，存的是"GetCount"。
             - 在文件Hello.java里对应智能合约GetCount()的函数名的一个静态变量，可以在类的开头中找到。
             - 如果写智能合约中其他函数的对应的修改函数时，这个值是要修改的。
-        - Collections.emptyList()：
+        - `Collections.emptyList()`：
             - 空列表
             - 这一行是要调用的合约函数的传参列表，因为GetCount()没有传参，所以这里是空。
-        - Arrays.asList(new TypeReference<Uint256>(){})
+        - `Arrays.asList(new TypeReference<Uint256>(){})`
             - 返回值列表
             - 如果是无返回值函数则如上，这行填入Collections.emptyList()
-            - 注意<>中的数据类型是Uint256，因为合约函数GetCount()的返回值类型是uint。
+            - 注意`<>`中的数据类型是Uint256，因为合约函数GetCount()的返回值类型是uint。
             - 如果合约函数返回值类型是string，则应填入Utf8String。
     - 第六行：return executeRemoteCallSingleValueReturn(function, BigInteger.class)
         - 明显的返回语句，注意原本web3j自动生成的一般是executeRemoteCallTransaction(function)，两者不是一个函数，是要修改的！
         - 后面的BigInterger.class则跟着第一行的返回值类型而定，第一行如果是String，则改为String.class。
 - 举例：
     - 例子1 - 为一个有传参String，有返回值String的合约函数增加一个返回值函数。
-    - 合约函数为：getUserEvent(string memory user\_name) public view returns(string memory){}
+    - 合约函数为：`getUserEvent(string memory user_name) public view returns(string memory){}`
 
-```
+```java
     //web3j自动生成的函数
     public RemoteFunctionCall<TransactionReceipt> getUserEvent(String user_name) 
     {
@@ -289,7 +281,7 @@ web3j generate solidity -a hello.abi -b hello.bin -o ./web_hello -p com.coolight
     - 例子2：为一个有传参String，有返回值uint的合约函数增加一个返回值函数
     - 合约函数为：getUserLen(string user\_name) public view returns(uint){}
 
-```
+```java
     //web3j自动生成的函数
     public RemoteFunctionCall<TransactionReceipt> getUserLen(String user_name) {
         final Function function = new Function(
@@ -311,7 +303,7 @@ web3j generate solidity -a hello.abi -b hello.bin -o ./web_hello -p com.coolight
 
 - 最终的Hello.java文件
 
-```
+```java
 import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.Collections;
@@ -455,7 +447,7 @@ public class Hello extends Contract {
             - 前面的Hello类型是合约名，因此如果你的合约是其他名字，则这个类型就要修改
         - 7 - 调用智能合约部分，使用的函数应修改为你所使用的智能合约中有的函数
 
-```
+```java
 import java.math.BigInteger;
 
 import org.web3j.crypto.Credentials;
@@ -548,8 +540,6 @@ public class App
 
 如果显示需要登录，请刷新页面或[点击此处](https://cloud.coolight.cool/#fileView&path=http%3A%2F%2Fcloud.coolight.cool%2F%3Fexplorer%2Fshare%2Ffile%26hash%3D1137m4V4f14R9n4N9QrIkdHDOmpAPfE3SMhvkr9ZpJsZUm84I_YXTwD0%26name%3D%2Fhello.zip%26_etag%3Dc67e1)下载
 
-<iframe width="100%" height="800px" class="embed-show" src="https://cloud.coolight.cool/#fileView&amp;path=http%3A%2F%2Fcloud.coolight.cool%2F%3Fexplorer%2Fshare%2Ffile%26hash%3Da6dcE8BQ5E5ySOv55GBSRbi_9NBwSNeqswCqtMHEDFushi3jMWHxJzfB%26name%3D%2Fhello.zip%26_etag%3Dc67e1" allowtransparency="true" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" frameborder="0" scrolling="no"></iframe>
-
 ## 常见问题
 
 - 节点意外关闭后再重新连接，已部署的合约能调用函数，但返回值一直是0？
@@ -562,7 +552,7 @@ public class App
 - 修改web3j生成的有返回值（String）函数时编译错误：
     - 报错类型 - 1：error: type argument String is not within bounds of type-variable T
         - 意思是String类型不能用在这个模板里
-        - 如果是在修改Arrays.asList(new TypeReference<T>(){})的话，可以把T替换为Utf8String（所在包见文章末尾），然后返回值等其他地方保持String即可
+        - 如果是在修改`Arrays.asList(new TypeReference<T>(){})`的话，可以把T替换为Utf8String（所在包见文章末尾），然后返回值等其他地方保持String即可
         - 如下图中第一个函数是web3j自动生成的，第二个函数是我修改增加的。
 
 ![](images/image-16.png)

@@ -39,7 +39,7 @@ double sum(double a, double b) {
 }
 ```
 
-- c++的模板是编译期就会展开的，编译期会根据你使用到的类型，生成 template <int> ... 版本、template<double> ... 版本，而原本写的 template<T> ... 其实就是一个配置一样，运行时是不存在的，只是为了告诉编译期应该怎么生成代码。
+- c++的模板是编译期就会展开的，编译期会根据你使用到的类型，生成 `template<int>` ... 版本、`template<double>` ... 版本，而原本写的 `template<T>` ... 其实就是一个配置一样，运行时是不存在的，只是为了告诉编译期应该怎么生成代码。
 
 ## 可变参数模板
 
@@ -137,7 +137,7 @@ T1 mysum(T2 item, Args... args);
 
 - 有了上面的知识，实现printf就简单了，我们可以让它接收 第一个是字符串类型，然后加上多个任意类型的参数，并递归解析输出即可：
 
-```
+```c++
 template<typename T>
 int printNum(const std::string& str, int index, T&& item) {
 	auto doShift = true;

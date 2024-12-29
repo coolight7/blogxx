@@ -7,6 +7,10 @@ sudo node ./buildAllPage.js
 
 npm run docs:build
 
+if [ $? -ne 0 ]; then
+    exit -1
+fi
+
 rm -rf build/
 
 mkdir build

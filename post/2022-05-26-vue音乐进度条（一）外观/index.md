@@ -22,11 +22,11 @@ tags:
 
 ## 实现
 
-- 首当其冲的当然是一个<span>作为**外框**
-- 然后搞一个<div>布局包住**播放进度条**和**加载进度条**
-- 最后加入两个<span>作为进度条：
+- 首当其冲的当然是一个`<span>`作为**外框**
+- 然后搞一个`<div>`布局包住**播放进度条**和**加载进度条**
+- 最后加入两个`<span>`作为进度条：
 
-```
+```html
 <span id="cmusic_control_span_progressBar">
     <div class="cmusic_displayFlex_class cmusic_control_progress_div">
         <span id="cmusic_control_span_loadProgress" style="width:80%"></span>
@@ -90,17 +90,13 @@ tags:
 }
 ```
 
-- 目前效果：
-
-/\*外框\*/ #cmusic\_control\_span\_progressBar{ border-radius: 50px; height: 20px; width: 100%; display: inline-flex; align-items: center; position: relative; background: transparent; box-shadow: inset 2px 2px 4px #bcc5d6, inset -2px -2px 5px #feffff; border: 2px solid #d0f4ff; justify-content: center; transition: all 0.8s ease; } /\*布局类\*/ .cmusic\_displayFlex\_class { width: 100%; display: flex; margin-left: auto; margin-right: auto; } .cmusic\_control\_progress\_div { position:absolute; width:94% !important; height:100%; align-items: center; } /\*进度条\*/ #cmusic\_control\_span\_progress, #cmusic\_control\_span\_loadProgress{ background: linear-gradient(90deg, #c4f4fe, #66ccff); border-radius: 50px; position: absolute; height: 60%; pointer-events: none; transition: width 0.5s ease; box-shadow: 2px 2px 10px #ccd3ff, -2px -2px 10px #ccd3ff; } /\*加载进度条\*/ #cmusic\_control\_span\_loadProgress { background: linear-gradient(90deg, #abecd6, #fff9d2); }
-
 - 这样基本的样子就有了，其实相当简单，就是css要搞多一点
 
 * * *
 
 ## 目录
 
-> 本文我们聊了如何搞出进度条的外观，接下来我们将聊聊如何让进度条跟随<audio>的已播放时长改变播放进度
+> 本文我们聊了如何搞出进度条的外观，接下来我们将聊聊如何让进度条跟随`<audio>`的已播放时长改变播放进度
 
 - 外观
 - 跟随已播放时长改变播放进度

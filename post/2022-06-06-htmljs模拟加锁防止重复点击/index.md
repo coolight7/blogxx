@@ -24,7 +24,7 @@ tags:
 
 - HTML / JS
 
-```
+```html
 <div style="width:100%;display:flex;justify-content: center;background:#66ccff;border-radius:10px;border 1px solid #66ccff;">
     <button onclick="btn_click()" style="border-radius:10px;">
         点死我
@@ -53,12 +53,7 @@ function btn_click() {
 </script>
 ```
 
-- 效果（每隔5秒只会执行一次按钮点击应该执行的事情）：
-
-点死我
-
-<script>let lock = true; <div></div> function btn_click() { if(lock == false) { return; } lock = false; alert("点了一下我捏"); //限制间隔5000毫秒（即5秒）只能执行一次 setTimeout(function(){ lock = true; },5000); }</script>
-
+- 效果（每隔5秒只会执行一次按钮点击应该执行的事情）
 * * *
 
 ## 结语

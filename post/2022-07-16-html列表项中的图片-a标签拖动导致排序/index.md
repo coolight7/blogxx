@@ -10,10 +10,10 @@ tags:
 
 ## 问题
 
-- 对列表项禁用拖动<li draggable="false">...</li>
-- 但列表项内的图片<img>和<a>仍能拖动并导致列表拖拽排序
+- 对列表项禁用拖动`<li draggable="false">...</li>`
+- 但列表项内的图片`<img>`和`<a>`仍能拖动并导致列表拖拽排序
 
 ## 解决方法
 
-- 在<img> 和 <a> 内添加 draggable="false"
-- 即<img draggable="false" /> <a draggable="false" />
+- 在`<img>` 和 `<a>` 内添加 draggable="false"
+- 即`<img draggable="false" /> <a draggable="false" />`

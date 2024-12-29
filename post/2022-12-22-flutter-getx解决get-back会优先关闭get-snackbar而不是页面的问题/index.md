@@ -44,7 +44,7 @@ navigator!.pop();
 
 - 这也意味着我们如果不使用Get.back()而使用flutter自带的路由管理Navigator则可以正常关闭页面而不会关闭悬浮通知
 
-- 有时我们还需要使用Get.back<T>(result: res)来返回数据
+- 有时我们还需要使用`Get.back<T>(result: res)`来返回数据
     - 我们同样可以替换使用：
 
 ```

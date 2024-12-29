@@ -59,22 +59,22 @@ tags:
         
         - 具体见相关外链：[winsw配置文件参数解释说明](https://blog.csdn.net/qq_40763549/article/details/117932091) - [安夜的cookie](https://blog.csdn.net/qq_40763549)
         
-        - <id>：指定Windows内部用户标识服务的id；在系统安装的所有服务中id必须是唯一的，并且完全由字母数字字符组成。
-        - <name>：服务的简短显示名称，可以包含空格和其他字符；在系统的所有服务中name也必须是唯一的。
-        - <description>：对服务的完整描述。
-        - <executable>：指定要启动的可执行文件，可以是绝对路径，也可以只指定可执行文件名称并从PATH中搜索。
+        - \<id\>：指定Windows内部用户标识服务的id；在系统安装的所有服务中id必须是唯一的，并且完全由字母数字字符组成。
+        - \<name\>：服务的简短显示名称，可以包含空格和其他字符；在系统的所有服务中name也必须是唯一的。
+        - \<description\>：对服务的完整描述。
+        - \<executable\>：指定要启动的可执行文件，可以是绝对路径，也可以只指定可执行文件名称并从PATH中搜索。
         
-        - <startargument>启动时的传递参数
-        - <stopargument>停止时的传递参数
-    - 一般修改<id> <name> <description> 都写为服务名就可以了。
-    - <executable>写exe程序所在的路径，且路径尾部包含程序名
-    - <logpath>写exe程序所在路径即可
-    - <startargument>一般改成程序的路径，后面添加对应的程序启动的命令
+        - \<startargument\>启动时的传递参数
+        - \<stopargument\>停止时的传递参数
+    - 一般修改\<id\> \<name\> \<description\> 都写为服务名就可以了。
+    - \<executable\>写exe程序所在的路径，且路径尾部包含程序名
+    - \<logpath\>写exe程序所在路径即可
+    - \<startargument\>一般改成程序的路径，后面添加对应的程序启动的命令
         - 比如frps一般的启动命令是frps -s frps.ini
         - 这样的话这里就可以在路径后面增加 -s D:\\frp\\frps.ini
         - 注意所有文件路径最好都用绝对路径
-    - <stopargument>一般改成程序路径，并且后面的-s stop改为对应的程序停止的命令
-        - 同<startargument>的写法。
+    - \<stopargument\>一般改成程序路径，并且后面的-s stop改为对应的程序停止的命令
+        - 同\<startargument\>的写法。
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>

@@ -15,7 +15,7 @@ tags:
 > 
 > \* 它几乎与arraylist一样，但vector是线程安全的，因此vector的性能比arraylist弱。
 > 
-> \* 使用时需要#include <vector>
+> \* 使用时需要#include `<vector>`
 
 ## 注意
 
@@ -28,7 +28,7 @@ tags:
         - cannot seek vector iterator before begin
         - 即迭代器移动越界了
 
-```
+```c++
 vector<int> arr;
 for (int i = 10; i--;)		//向vector压入数据
 	arr.push_back(i);

@@ -13,8 +13,8 @@ tags:
 ## HTML标签的样式
 
 - 可以定义其样式在标签的尖括号中（内联样式），或者是使用CSS样式表
-- 例如：<div id="cooldiv" class="cdiv"><div>
-    - 在尖括号中： <div id="cooldiv" class="cdiv" height="20"></div>
+- 例如：`<div id="cooldiv" class="cdiv"><div>`
+    - 在尖括号中： `<div id="cooldiv" class="cdiv" height="20"></div>`
     - 使用CSS样式表：
         - #cooldiv { height:20px; }
         - .cdiv { height:20px; }
@@ -23,14 +23,14 @@ tags:
 
 ## JS方法
 
-> 这里我们都以开头的div为例子（<div id="cooldiv" class="cdiv"><div>）
+> 这里我们都以开头的div为例子（`<div id="cooldiv" class="cdiv"><div>`）
 
 ### 修改内联样式：
 
 - 标签.setAttribute("属性名", "属性值")
     - 示例：
 
-```
+```html
 <script>
 /*通过id定位*/
 function temp_byId(){
@@ -54,7 +54,7 @@ function temp_byClassName(){
     
     - 示例：
 
-```
+```html
 <script>
 function temp(){
     var mydiv = document.getElementById("cooldiv");
@@ -78,7 +78,7 @@ function temp(){
     
     - 示例：
 
-```
+```html
 <script>
 function temp(){
     var mydiv = document.getElementById("cooldiv");
@@ -89,14 +89,14 @@ function temp(){
 </script>
 ```
 
-- 插入<style>标签
+- 插入`<style>`标签
     - 示例：
 
-```
-/*创建一个<style>标签*/
+```js
+/*创建一个style标签*/
 var mystyle = document.createElement('style');
 
-/*写入<style>内的CSS样式表*/
+/*写入style内的CSS样式表*/
 mystyle.innerHTML =
 '.cdiv {' +
 '   color: blue;' +
@@ -104,9 +104,9 @@ mystyle.innerHTML =
 '   height: 20px;' +
 '}';
 
-// 获取第一个<script>标签
+// 获取第一个script标签
 var ref = document.querySelector('script');
-// 在第一个<script>标签前插入<style>标签
+// 在第一个script标签前插入style标签
 ref.parentNode.insertBefore(mystyle, ref);
 ```
 
@@ -120,7 +120,7 @@ ref.parentNode.insertBefore(mystyle, ref);
         - 标签.contains("类名"); 判断一个类型是不是存在，返回true和false
     - 示例：
 
-```
+```html
 <style>
 /*定义一个新样式类newDiv，写入想要的样式*/
 .newDiv {
