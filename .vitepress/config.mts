@@ -17,8 +17,8 @@ export default defineConfig({
       {
         text: '目录',
         items: [
-          { text: '推荐', link: '/page/main' },
-          { text: '全部文章', link: '/page/main' },
+          { text: '推荐', link: '/page/main/' },
+          { text: '全部文章', link: '/page/allpage/' },
         ]
       }
     ],
