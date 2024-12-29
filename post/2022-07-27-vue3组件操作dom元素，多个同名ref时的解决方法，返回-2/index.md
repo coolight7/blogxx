@@ -9,6 +9,7 @@ tags:
   - "proxy"
   - "vue"
 ---
+# [vue3]组件操作Dom元素，多个同名ref时的解决方法，返回了proxy对象时的使用
 
 > **1\.** 原生js中我们会使用document.getElementsByClassName()，document.getElementById()等获取dom元素，但在vue中，更推荐使用ref获取。
 > 

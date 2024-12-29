@@ -6,6 +6,7 @@ categories:
 tags: 
   - "c"
 ---
+# [c++]Debug运行时异常：__acrt_first_block == header
 
 ## 异常弹窗
 

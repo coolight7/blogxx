@@ -8,6 +8,7 @@ tags:
   - "vscode"
   - "vue"
 ---
+# [vue/vite]在vscode中使用vite手动创建vue项目
 
 > \* vite是什么？
 > 

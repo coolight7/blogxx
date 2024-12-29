@@ -54,6 +54,7 @@ Exception: Build process failed.
 18>------ 已启动生成: 项目: ALL_BUILD, 配置: Debug x64 ------
 18>Building Custom Rule D:/0Acoolight/Program/flutter/mymusic/windows/CMakeLists.txt
 19>------ 已启动生成: 项目: INSTALL, 配置: Debug x64 ------
+# [flutter] 解决 Exception: Build process failed
 19>-- Install configuration: "Debug"
 19>CMake Error at cmake_install.cmake:115 (file):
 19>  file INSTALL cannot find

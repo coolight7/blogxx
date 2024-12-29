@@ -7,6 +7,7 @@ tags:
   - "c"
   - "vector"
 ---
+# [c++]记录使用vector遇到过的天坑问题
 
 ## vector
 

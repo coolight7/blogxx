@@ -6,6 +6,7 @@ categories:
 tags: 
   - "c"
 ---
+# [c/c++]循环体中switch内的break无法用于结束循环
 
 > 循环内如果有switch的话，switch内的break无法用于结束循环，而是会终止switch的执行。
 

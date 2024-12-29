@@ -8,6 +8,7 @@ tags:
   - "linux"
   - "screen"
 ---
+# [screen]Linux上保持程序在关闭ssh窗口后继续运行
 
 ## Screen
 

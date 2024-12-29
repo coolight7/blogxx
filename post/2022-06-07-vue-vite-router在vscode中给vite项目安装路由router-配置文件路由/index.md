@@ -9,6 +9,7 @@ tags:
   - "vscode"
   - "vue"
 ---
+# [vue/vite/router]在vscode中给vite项目安装路由router/配置文件路由
 
 ## 安装router
 

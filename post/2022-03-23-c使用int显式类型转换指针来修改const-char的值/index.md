@@ -6,6 +6,7 @@ categories:
 tags: 
   - "c"
 ---
+# [c++]使用int()显式类型转换指针来修改const char的值
 
 ## 摘要
 

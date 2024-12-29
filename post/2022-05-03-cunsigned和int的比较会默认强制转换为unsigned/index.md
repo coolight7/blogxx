@@ -6,6 +6,7 @@ categories:
 tags: 
   - "c"
 ---
+# [c/c++]unsigned和int的比较会默认强制转换为unsigned
 
 > **无符号整形**(unsigned) 和 **有符号整形**(int) 的比较会默认强制转换为 **无符号类型**(unsigned)
 

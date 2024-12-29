@@ -6,6 +6,7 @@ categories:
 tags: 
   - "c"
 ---
+# [c++]new运算符并不确保会自动初始化
 
 ## new运算符
 

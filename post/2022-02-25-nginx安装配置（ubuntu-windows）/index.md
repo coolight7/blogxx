@@ -191,6 +191,7 @@ server {
         listen       80;
         server_name  tomcat.coolight.cool;
         #-------Tomcat---------
+# [nginx]安装配置（ubuntu/windows）
         location / {
             proxy_pass  http://localhost:8080;
             proxy_set_header        Host            $host;
