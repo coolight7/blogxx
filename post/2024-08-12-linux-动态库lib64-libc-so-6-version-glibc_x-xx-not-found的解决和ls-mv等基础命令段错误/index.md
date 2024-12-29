@@ -7,6 +7,7 @@ tags:
   - "linux"
   - "ubuntu"
 ---
+# [linux/动态库]lib64/libc.so.6: version `GLIBC_x.xx' not found的解决和ls/mv等基础命令段错误救火
 
 ## GLIBC 不匹配
 

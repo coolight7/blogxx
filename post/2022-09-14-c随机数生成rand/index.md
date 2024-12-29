@@ -7,6 +7,7 @@ categories:
 tags: 
   - "c"
 ---
+# [c++]随机数生成rand()
 
 ## rand()
 

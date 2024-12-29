@@ -5,6 +5,7 @@ tags:
   - "vscode"
   - "wsl"
 ---
+# vscode无法连接WSL（scripts/wslCode.sh: 68: /root/.vscode-server/bin/xxx/bin/remote-cli/code: not found）
 
 ## 问题
 

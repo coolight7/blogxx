@@ -9,6 +9,7 @@ tags:
   - "vscode"
   - "vue"
 ---
+# [vue/vite/pinia]在vscode中给vite项目安装pinia状态管理
 
 > \* pinia是什么？
 > 

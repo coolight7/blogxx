@@ -5,6 +5,7 @@ tags:
   - "proxy"
   - "代理"
 ---
+# 为Ubuntu/WSL/Linux配置系统代理；挂到clash-win
 
 ## 系统代理
 

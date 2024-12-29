@@ -10,6 +10,7 @@ tags:
   - "vue"
   - "组件"
 ---
+# [vue3]组件间v-bind，v-model传参(defineProps，defineEmits)
 
 > 1\. 自定义组件间也可以和普通标签（<div> <span>）一样指定属性传参
 > 

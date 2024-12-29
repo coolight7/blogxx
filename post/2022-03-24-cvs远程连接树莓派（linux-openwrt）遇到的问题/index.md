@@ -12,6 +12,7 @@ tags:
   - "visualstudio"
   - "树莓派4b"
 ---
+# [c++]Win10下VS2019远程连接调试linux（树莓派/openwrt）
 
 ## 树莓派4B
 

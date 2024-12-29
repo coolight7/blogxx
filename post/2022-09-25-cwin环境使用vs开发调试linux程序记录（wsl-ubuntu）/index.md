@@ -10,6 +10,7 @@ tags:
   - "vs"
   - "wsl"
 ---
+# [c++]win环境使用vs开发调试linux程序记录（WSL-ubuntu）
 
 ## 前言
 

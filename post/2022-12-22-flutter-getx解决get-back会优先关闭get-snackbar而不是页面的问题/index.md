@@ -7,6 +7,7 @@ tags:
   - "flutter"
   - "getx"
 ---
+# [flutter/Getx]解决Get.back()会优先关闭Get.snackbar而不是页面的问题
 
 ## Get.snackbar
 

@@ -6,6 +6,7 @@ categories:
 tags: 
   - "lrc"
 ---
+# LRC歌词格式和编解码实现
 
 ## 前言
 

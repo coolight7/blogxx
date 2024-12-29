@@ -6,6 +6,7 @@ categories:
 tags: 
   - "c"
 ---
+# [c++]new之后不delete的弊端
 
 ## 前言
 

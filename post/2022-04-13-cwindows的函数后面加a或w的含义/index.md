@@ -8,6 +8,7 @@ tags:
   - "c"
   - "windows"
 ---
+# [c++]Windows的函数后面加’A‘或’W‘的含义
 
 ## 含义
 

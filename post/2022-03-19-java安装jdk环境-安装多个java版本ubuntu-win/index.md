@@ -11,6 +11,7 @@ tags:
   - "ubuntu"
   - "windows"
 ---
+# [JAVA]安装JDK环境 / 安装多个JAVA版本(ubuntu/Win)
 
 ## JDK
 
