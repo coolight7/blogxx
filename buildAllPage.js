@@ -82,9 +82,7 @@ fs.readdir(dirPath, async (err, files) => {
 # 全部文章
 ---
 > [!TIP]
-> 共 ${pagelist.length} 篇文章
-> 最新文章于 ${newDate}
-> 最早文章于 ${oldDate}
+> 共 ${pagelist.length} 篇文章, 最新文章于 ${newDate}, 最早文章于 ${oldDate}
 
 `;
     for (var i = 0; i < pagelist.length; ++i) {

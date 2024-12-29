@@ -11,6 +11,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '主页', link: '/' },
+      { text: '全部文章', link: '/page/allpage/' },
       { text: '关于', link: '/page/about/' },
     ],
     sidebar: [
@@ -35,6 +36,12 @@ export default defineConfig({
 </a>
 `,
       copyright: `版权所有 © 2022-${new Date().getFullYear()} <a href="https://github.com/coolight7">『coolight • 郑泳坤』</a> `
+    },
+    notFound: {
+      title: "页面未找到",
+      quote: "这可能是因为博客迁移，您可以通过本页面左上角的搜索框查找相关内容。",
+      linkLabel: "回到主页",
+      linkText: "回到主页",
     },
     search: {
       provider: 'local',
