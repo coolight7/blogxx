@@ -3,7 +3,7 @@ script_dir=$(pwd)
 
 echo $script_dir
 
-sudo node ./buildAllPage.js
+node ./buildAllPage.js
 
 npm run docs:build
 
