@@ -6,7 +6,7 @@ const allpageFilePath = "./page/allpage/index.md";
 
 var pagelist = [];
 
-const readMeta = function(str, start, end) {
+const readMeta = function (str, start, end) {
     const start_tag = start;
     const end_tag = end;
     var start_index = str.indexOf(start_tag);
@@ -32,13 +32,13 @@ const readInfo = async function (name) {
                 fs.readFile(itemDirPath + "/index.md", (err, data) => {
                     if (err) {
                         resolve(false);
-                        return console.error('Error reading file: '+ err);
+                        return console.error('Error reading file: ' + err);
                     }
                     var str = data.toString();
                     var title = readMeta(str, 'title: "', '"\n');
                     const dateStr = readMeta(str, 'date: "', '"\n');
                     if (!dateStr) {
-                        console.error('Error parsing date: '+ itemDirPath);
+                        console.error('Error parsing date: ' + itemDirPath);
                         process.exit(-1);
                     }
                     title = title.replace("[", "\\[");
@@ -77,8 +77,8 @@ fs.readdir(dirPath, async (err, files) => {
     });
     const newDate = pagelist[0].dateStr;
     const oldDate = pagelist[pagelist.length - 1].dateStr;
-    var result = 
-`
+    var result =
+        `
 # 全部文章
 ---
 > [!TIP]
@@ -87,6 +87,9 @@ fs.readdir(dirPath, async (err, files) => {
 `;
     for (var i = 0; i < pagelist.length; ++i) {
         var item = pagelist[i];
+        if (item.dirname.includes(' ')) {
+            console.log("[warn] 文章文件夹名称不应包含空格：", item.dirname);
+        }
         result += `- [${item.title}](/post/${item.dirname}/)\n`;
     }
     // 写入

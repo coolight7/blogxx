@@ -176,9 +176,10 @@ dependencies {
 import java.util.zip.ZipEntry
 import java.util.zip.ZipFile
 
-// 把aar拷贝进入主项目的方法 com.example.android_control换成你自己的插件包名
-// * 只修改下面这一行的参数就可以了
-copyAar2Host('com.example.android_control')
+// 把aar拷贝进入主项目的方法 exampleName 换成你自己的插件名
+// - 如果不清楚要填什么名，就解注释下面的 copyAar2Host::rootProject.allprojects.each::println("<<${p.name}|${p.group}>> isHost ? ${isApp}")，然后跑一下编译就会把目标名称打印出来，即 ${p.name}
+// - 只修改下面这一行的参数就可以了
+copyAar2Host('exampleName')
 
 // 拷贝aar的方法
 static aarFileCopy(String srcPath,String desPath) {
@@ -198,14 +199,14 @@ static aarFileCopy(String srcPath,String desPath) {
     }
 }
 
-void copyAar2Host(String pluginGroup) {
+void copyAar2Host(String pluginName) {
     Project currentProject = null
     Project appProject = null
     rootProject.allprojects.each {
-        p->
+        p -> {
             boolean  isApp = p.plugins.hasPlugin("com.android.application")
-            println("<<${p.name}>> isHost ? ${isApp}")
-            if (p.group == pluginGroup) {
+            // println("<<${p.name}|${p.group}>> isHost ? ${isApp}")
+            if (p.name == pluginName) {
                 currentProject = p
                 println("Plugin project name is $currentProject")
             }
@@ -213,6 +214,7 @@ void copyAar2Host(String pluginGroup) {
                 appProject = p
                 println("Host project name is <<${p.name}>>")
             }
+        }
     }
     Set<File> aarFiles = new HashSet<File>()
     if (appProject != null && currentProject != null) {

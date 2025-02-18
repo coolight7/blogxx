@@ -1,5 +1,5 @@
 ---
-title: "gcc -O3比O0生成文件更大"
+title: "gcc O3比O0生成文件更大"
 date: "2025-01-17"
 tags: 
   - "gcc"
