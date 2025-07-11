@@ -17,5 +17,7 @@ mkdir build
 
 mv .vitepress/dist/* build/
 
+cp -r resource/ build/
+
 cd $script_dir
 chmod -R 0755 ./*
