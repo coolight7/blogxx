@@ -16,13 +16,20 @@ hero:
     - theme: alt
       text: Github
       link: https://github.com/coolight7
+    - theme: alt
+      text: Bili
+      link: https://space.bilibili.com/93784977
 
 features:
   - title: 拟声
-    details: 『倾力之作』新拟物风格的音视频播放器，包含大量创新功能。
+    icon: 
+      src: resource/images/musicxx-logo-tran.png
+    details: 新拟物风格的网盘/webdav/本地音视频播放器，支持歌词弹幕、共享与控制等创新功能
     link: https://blog.mimicry.cool/
-  - title: HiC
-    details: 类c语言编译器前端->ASM->汇编解释器
-    link: https://github.com/coolight7/hic
+  - title: 流明AI
+    icon: 
+      src: resource/images/lumenxx-logo-tran.png
+    details: AI音视频处理工具，支持单独运行模型和自动化工作流
+    link: https://blog.lumenxx.bool.run/
 ---
 
