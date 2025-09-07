@@ -36,3 +36,19 @@ tags:
 - 解决办法：
     - 前端，靠前端基本无解，要么让用户更新浏览器，或是用后端配合中转；比如当默认接口请求失败时，尝试转到其他配置了兼容的证书的服务端接口
     - 客户端，可以自定义 HttpClient，一般会有证书验证函数可以自定义，添加验证`Let's Encrypt`的根证书即可，或是直接禁用证书安全性验证，禁用后仍然能进行https的加密连接的，只是没有验证证书可靠性，也就是拦不住中间人攻击。
+
+## TLS重协商
+- 早期TLS版本（1.0/1.1）允许重协商安全参数，但会被用于中间人攻击，因此后来版本默认禁用了
+- 最近发现部分设备请求时会触发这个问题，客户端临时解决办法是开启允许：
+    - flutter/dart 关联Http请求报错`connection closed before full header was received`:
+```dart
+// 不包含系统的证书
+final context = SecurityContext(withTrustedRoots: false);
+// 允许 TLS重协商
+context.allowLegacyUnsafeRenegotiation = true;
+final client = HttpClient(context: context);
+// 不验证证书有效
+client.badCertificateCallback = (X509Certificate cert, String host, int port) {
+    return true;
+};
+```
