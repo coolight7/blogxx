@@ -23,12 +23,12 @@ hero:
 features:
   - title: 拟声
     icon: 
-      src: resource/images/musicxx-logo-tran.png
-    details: 新拟物风格的网盘/webdav/本地音视频播放器，支持歌词弹幕、共享与控制等创新功能
+      src: resource/images/musicxx-glass-blue-tran.png
+    details: 新拟物风格的网盘/webdav/本地音视频播放器，支持歌词弹幕、共享与控制、音源转换等创新功能
     link: https://blog.mimicry.cool/
   - title: 流明AI
     icon: 
-      src: resource/images/lumenxx-logo-tran.png
+      src: resource/images/lumenxx-glass.png
     details: AI音视频处理工具，支持单独运行模型和自动化工作流
     link: https://blog.lumenxx.bool.run/
 ---
