@@ -106,3 +106,14 @@ lib /def:name_xxx.def /machine:x64 /out:name_xxx.lib
 - avcodec.exp
 - avcodec.lib
 ```
+- 附带一个`ffmpeg`编译使用的提示：
+  - 引用ffmpeg的libav动态库编译后报错找不到符号，可能是因为c++符号签名的问题，include ffmpeg的头文件时应当 extern "C" 包裹：
+```c++
+// 在c++项目里不能直接 include
+#include "third_part/ffmpeg/include/libavutil/log.h"
+
+// 应当用 extern "C"
+extern "C" {
+#include "third_part/ffmpeg/include/libavutil/log.h"
+}
+```
