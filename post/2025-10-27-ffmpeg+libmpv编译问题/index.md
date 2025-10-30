@@ -1,5 +1,5 @@
 ---
-title: "ffmpeg+libmpv编译、裁剪、添加依赖库"
+title: "ffmpeg+libmpv编译问题"
 date: "2025-10-27"
 tags: 
   - "ffmpeg"
@@ -11,19 +11,24 @@ tags:
 - `libmpv`依赖`ffmpeg`，而且他们俩的依赖库很多，最近给`安卓`、`windows`编译动态库时踩了很多坑，感觉记录够写3篇了
 
 ## 常见问题
+
+### ERROR: xxx requested but not found 找不到xx依赖库
+- 可能是真没有这个库，也可能是 configure 尝试使用依赖库编译测试程序时失败
+- vim 查看 `build/ffbuild/config.log`，先跳转末尾，然后搜索对应库名称、error等字样，看看错误是什么。可能是 cpu平台不正确、符号缺失、缺少 include搜索目录或链接搜索目录、缺少指定链接库名称等原因
+
 ### ffmpeg编译，找不到`stdbit.h`:
-1. **如果附近错误提示：**
+- 如果附近错误提示：
 ```sh
 fatal error: 'stdbit.h' file not found
 ```
-  - 目前看来这一行不是关键错误！日志往上找找是否有其他错误。我是 `configure --enable-vulkan` 后报错 `ERROR: vulkan requested but not found`，附近出现这个错误，但其实根源错误是更早的日志中提到
-  - 我这边是指定 `configure --enable-vulkan` 时才会出现，看了下 `configure` 的内容，它有一步检查`stdbit.h`的编译测试，大约7994行附近，可以代码文件内搜索跳转查看：
+- 目前看来这一行不是关键错误！日志往上找找是否有其他错误。我是 `configure --enable-vulkan` 后报错 `ERROR: vulkan requested but not found`，附近出现这个错误，但其实根源错误是更早的日志中提到
+- 我这边是指定 `configure --enable-vulkan` 时才会出现，看了下 `configure` 的内容，它有一步检查`stdbit.h`的编译测试，大约7994行附近，可以代码文件内搜索跳转查看：
 ```sh
 check_builtin stdbit "stdbit.h assert.h" \
     'static_assert(__STDC_VERSION_STDBIT_H__ >= 202311L, "Compiler lacks stdbit.h")' || \
     add_cppflags '-I\$(SRC_PATH)/compat/stdbit'
 ```
-  - 其实就是测试编译器是否，百度搜是说 c23 以上会有这个，但指定了 `std=c23` 后仍然不行
+- 其实就是测试编译器是否有 stdbit.h，百度搜是说 c23 以上会有这个，但指定了 `std=c23` 后仍然不行，不过即使缺失，ffmpeg也有自带这个头文件(ffmpeg/compat/stdbit/stdbit.h)，所以这个错误提示可以忽略
 
 ### 报错：`ERROR: vulkan requested but not found`
 - 指定了 `configure --enable-vulkan` 但没有找到 vulkan 的库，或是测试编译vulkan是否可用时失败就会提示这个，如果解决不了去掉 `--enable-vulkan` 即可
@@ -49,6 +54,27 @@ ld.lld: error: undefined symbol: __declspec(dllimport) CM_Get_DevNode_Registry_P
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 ```
 
+### 交叉编译安卓ffmpeg8.0时报错：error: an attribute list cannot appear here
+- 很多处报同样的错误，但看了下 ffmpeg7.1.2 同个地方的代码是一样的，应该是宏变化了或者没导入展开替换等问题吧
+- 由于windows版可以正常编译，所以干脆更新了ndk从原本27到29（29.0.14206865），就正常了，[ndk下载](https://developer.android.google.cn/ndk/downloads/?hl=zh-cn)：
+- 
+```sh
+| src/libavfilter/ebur128.c:103:8: error: an attribute list cannot appear here
+|   103 | static DECLARE_ALIGNED(32, double, histogram_energies)[1000];
+|       |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
+
+### 交叉编译安卓ffmpeg8.0启用 vulkan 时报错vulkan版本不匹配
+- windows版是直接下载最新的vulkan-header，并编译vulkan、静态链接成功了
+- ndk中包含 vulkan.so 和 头文件，但内置的vulkan版本比较老，可以从 [vulkan-header-github](https://github.com/KhronosGroup/Vulkan-Headers.git) 下载最新的。按理头文件应该和待支持设备对应，不然可能崩溃，但根据 ndk 的 [issue#2016](https://github.com/android/ndk/issues/2016) 提到，更新 header 并不影响功能支持？可能是只影响编译，功能是否可用仍需看运行时设备支持？`TODO 待定...`
+
+### 交叉编译安卓ffmpeg8.0启用 vulkan 时报错：incompatible function pointer types initializing 'PFN_vkDebugUtilsMessengerCallbackEXT'
+- `incompatible function pointer types initializing 'PFN_vkDebugUtilsMessengerCallbackEXT' ... [-Wincompatible-function-pointer-types]`
+- `-Wincompatible-function-pointer-types`就是启用了严格函数指针类型检查，报错信息也就是说函数指针类型不兼容，但看了源码对应位置我认为是ok的，所以直接关掉这个严格检查，在 cflags 添加：
+```
+./configure --extra-cflags="-Wno-error=incompatible-function-pointer-types"
+```
+
 ### clang 崩溃
 - 报错如下，一般啥也不用动，重新编译就可以了，如果是内存不足则限制 job：
 ```sh
@@ -67,3 +93,6 @@ InstalledDir: /home/coolight/program/media/mpv-winbuild-cmake/clang_root/bin
 clang++: note: diagnostic msg:
 ********************
 ```
+
+### xz 编译时卡很久
+- top 查看，如果是 `po4a` 在跑，kill -9 杀了应该就可以了，它是一个生成文档的
