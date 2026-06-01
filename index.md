@@ -25,7 +25,7 @@ features:
     icon: 
       src: resource/images/musicxx-glass-blue-tran.png
     details: 新拟物风格的网盘/webdav/本地音视频播放器，支持歌词弹幕、共享与控制、音源转换等创新功能
-    link: https://blog.mimicry.cool/
+    link: https://blog.music.bool.run/
   - title: 流明AI
     icon: 
       src: resource/images/lumenxx-glass.png
