@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: 推荐
-      link: https://blog.coolight.cool/
+      link: https://blog.coolight.bool.run/
     - theme: alt
       text: Github
       link: https://github.com/coolight7

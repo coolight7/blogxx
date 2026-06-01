@@ -16,7 +16,7 @@ tags:
 
 - 腾讯云服务器 - ubuntu - 20.04
 - 前文已经介绍过如何安装：
-    - geth版本 - 1.10.15-stable （[以太坊私链搭建](https://blog.coolight.cool/?p=145#环境)）
+    - geth版本 - 1.10.15-stable （[以太坊私链搭建](https://blog.coolight.bool.run/?p=145#环境)）
 - web3j - 4.9.0 / 4.5.5
 
 * * *

@@ -176,8 +176,8 @@ tags:
 ### 使用方法：
 
 - 进入wordpress后端管理界面（其链接一般是你的网站主页网址/wp-admin）
-    - 比如我访问我的主页的网址是：https://blog.coolight.cool
-    - 则我的wordpress后端管理界面链接是：https://blog.coolight.cool/wp-admin/
+    - 比如我访问我的主页的网址是：https://blog.coolight.bool.run
+    - 则我的wordpress后端管理界面链接是：https://blog.coolight.bool.run/wp-admin/
     - 进入管理界面后需要先填写管理员的账号和密码。
     - 然后就可以进到这样的一个界面：
 

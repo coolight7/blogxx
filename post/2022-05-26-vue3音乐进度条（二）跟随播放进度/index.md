@@ -24,7 +24,7 @@ tags:
 
 - 在此之前，你需要有以下基础：
     - HTML/CSS/JS
-    - [了解一些`<audio>`标签的属性和事件](https://blog.coolight.cool/htmlaudio%e9%9f%b3%e9%a2%91%e6%a0%87%e7%ad%be%e7%9a%84%e5%b1%9e%e6%80%a7%e5%92%8c%e4%ba%8b%e4%bb%b6/)
+    - [了解一些`<audio>`标签的属性和事件](https://blog.coolight.bool.run/htmlaudio%e9%9f%b3%e9%a2%91%e6%a0%87%e7%ad%be%e7%9a%84%e5%b1%9e%e6%80%a7%e5%92%8c%e4%ba%8b%e4%bb%b6/)
     - Vue（数据绑定和事件绑定）
 
 * * *
@@ -126,7 +126,7 @@ var cmusic_json = {
     //数据
     data() {
         return {
-            url_audio:"https://blog.coolight.cool/wp-content/uploads/2022/05/大喜_洛天依.m4a",
+            url_audio:"https://blog.coolight.bool.run/wp-content/uploads/2022/05/大喜_洛天依.m4a",
             cmusic_control_loadProgress_style:"width:80%",
             cmusic_control_progress_style:"width:50%"
         }

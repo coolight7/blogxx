@@ -57,19 +57,19 @@ LPCWSTR stringToLPCWSTR(const std::string& orig)
         - 示例：
 
 ```
-ShellExecuteA(NULL, "open", "https://blog.coolight.cool/", NULL, NULL, SW_SHOWNORMAL);
+ShellExecuteA(NULL, "open", "https://blog.coolight.bool.run/", NULL, NULL, SW_SHOWNORMAL);
 
-string str = "https://blog.coolight.cool/";
+string str = "https://blog.coolight.bool.run/";
 ShellExecute(NULL, _T("open"), stringToLPCWSTR(str), NULL, NULL, SW_SHOWNORMAL);
 
-const char link_char[] = "https://blog.coolight.cool/";
+const char link_char[] = "https://blog.coolight.bool.run/";
 ShellExecute(NULL, _T("open"), stringToLPCWSTR(string(link_char)), NULL, NULL, SW_SHOWNORMAL);
 
-ShellExecute(NULL, L"open", CA2W("https://blog.coolight.cool/"), NULL, NULL, SW_SHOWNORMAL);
+ShellExecute(NULL, L"open", CA2W("https://blog.coolight.bool.run/"), NULL, NULL, SW_SHOWNORMAL);
 ```
 
 * * *
 
 ## 常见编码格式
 
-> 见另一篇文章：[常见编码格式 / 字节序（大端 / 小端）/ 带BOM](https://blog.coolight.cool/?p=633)
+> 见另一篇文章：[常见编码格式 / 字节序（大端 / 小端）/ 带BOM](https://blog.coolight.bool.run/?p=633)

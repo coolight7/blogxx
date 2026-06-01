@@ -14,8 +14,8 @@ tags:
 
 - 主节点：腾讯云服务器 - linux - ubuntu - 20.04
 - 副节点：腾讯云服务器 - linux - ubuntu - 18.04
-- [安装geth](http://blog.coolight.cool/?p=145#环境)
-- [搭建以太坊私链](https://blog.coolight.cool/?p=145#私链搭建)
+- [安装geth](http://blog.coolight.bool.run/?p=145#环境)
+- [搭建以太坊私链](https://blog.coolight.bool.run/?p=145#私链搭建)
 
 * * *
 
@@ -38,7 +38,7 @@ tags:
         - $ geth attach http://your\_ip:8545
     - 这样相当于远程连接控制主节点了，就像我们在windows上用ssh远程连接linux去控制geth挖矿的开启和关闭一样，链上仍然只有主节点一个，只不过有主节点本机和另一台机可以去控制主节点。
 - 副节点需要和主节点用一样的创世块文件
-    - 这里就用和之前的文章（[以太坊私链搭建](https://blog.coolight.cool/?p=145#私链搭建)）所用的创世块一致
+    - 这里就用和之前的文章（[以太坊私链搭建](https://blog.coolight.bool.run/?p=145#私链搭建)）所用的创世块一致
     - genesis.json
 
 ```
@@ -109,7 +109,7 @@ geth --datadir ./data --networkid 7  --http --http.addr 0.0.0.0 --http.vhosts "*
 
 ### 修改java程序连接副节点
 
-- 上一篇的文章：[java使用web3j调用以太坊私链上的智能合约](https://blog.coolight.cool/?p=156)
+- 上一篇的文章：[java使用web3j调用以太坊私链上的智能合约](https://blog.coolight.bool.run/?p=156)
     - 上文中讲到，java程序连接单节点（主节点）的私链去调用智能合约。
 - 注意：
     - 如果不修改的话，此时主节点虽然开着geth，但关闭了挖矿，只能和副节点进行数据同步，而连接主节点发送的请求都是不能执行的。

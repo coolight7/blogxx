@@ -163,7 +163,7 @@ int main()
 }
 ```
 
-- 这种操作被称为[**柔性数组**](https://blog.coolight.cool/?p=971)
+- 这种操作被称为[**柔性数组**](https://blog.coolight.bool.run/?p=971)
 
 ### 获取消息的信息
 
