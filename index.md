@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "猫薄荷"
   text: "技术博客记录 ~ coolight's blog."
-  tagline: c/c++ flutter audio video  web network
+  tagline: c/c++ flutter/dart
   actions:
     - theme: brand
       text: 推荐
