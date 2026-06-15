@@ -1,5 +1,7 @@
 # 推荐
 
+- [**asio协程异步读取文件**](/post/2026-06-15-asio协程异步读取文件/)
+- [**极限压缩裁剪ffmpeg+libmpv体积**](/post/2025-11-07-极限压缩裁剪ffmpeg+libmpv体积/)
 - [**UDP 组播和广播** | **实现局域网内客户端互相发现**](/post/2024-02-22-udp-组播和广播/)
 - [**LRC歌词格式和编解码实现**](/post/2024-04-22-lrc歌词格式/)
 - [**flutter给media3-exoplayer扩展ffmpeg解码器**](/post/2024-04-01-安卓-flutter给media3-exoplayer扩展ffmpeg解码器/)
