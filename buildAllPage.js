@@ -35,10 +35,10 @@ const readInfo = async function (name) {
                         return console.error('Error reading file: ' + err);
                     }
                     var str = data.toString();
-                    var title = readMeta(str, 'title: "', '"\n');
-                    const dateStr = readMeta(str, 'date: "', '"\n');
+                    var title = readMeta(str, 'title: "', '"');
+                    const dateStr = readMeta(str, 'date: "', '"');
                     if (!dateStr) {
-                        console.error('Error parsing date: ' + itemDirPath);
+                        console.error('Error parsing date: ' + itemDirPath + ', ' + str);
                         process.exit(-1);
                     }
                     title = title.replace("[", "\\[");
