@@ -21,15 +21,15 @@ hero:
       link: https://space.bilibili.com/93784977
 
 features:
-  - title: 拟声
+  - title: 拟声 • Musicxx
     icon: 
       src: resource/images/musicxx-glass-blue-tran.png
-    details: 新拟物风格的网盘/webdav/本地音视频播放器，支持歌词弹幕、共享与控制、音源转换等创新功能
+    details: 本地/webdav云盘/Nas音视频播放器，支持歌词弹幕、共享与控制、音源转换、首字母索引优化等创新功能
     link: https://blog.music.bool.run/
-  - title: 流明AI
+  - title: 流明 • Lumenxx
     icon: 
       src: resource/images/lumenxx-glass.png
-    details: AI音视频处理工具，支持单独运行模型和自动化工作流
+    details: AI音视频处理工具, 图像生成、大语言模型、变声翻唱、克隆音色配音、语音识别、AI编曲、人声伴奏分离
     link: https://blog.lumenxx.bool.run/
 ---
 
